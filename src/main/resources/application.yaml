@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: mutual-fund-auth-service
+
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mutualfundtracker
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000  # 24 hours in milliseconds
+  refresh-expiration: 604800000  # 7 days in milliseconds
+
+# Google OAuth Configuration
+google:
+  client-id: ${GOOGLE_CLIENT_ID}
+  client-secret: ${GOOGLE_CLIENT_SECRET}
+
+# Logging Configuration
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.arutech.mftracker: INFO
+
+# Server Configuration
+server:
+  port: 8081
+  servlet:
+    context-path: /api/v1/auth
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000,http://localhost:8080
+security:
+  basic:
+    enabled: false
+  ignored:
+    - /api/v1/auth/**
+    - /api/v1/auth/google/**

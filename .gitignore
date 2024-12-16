@@ -8,6 +8,12 @@
 # BlueJ files
 *.ctxt
 
+
+.env
+.env.local
+
+
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -57,4 +63,4 @@ build/
 
 ### VS Code ###
 .vscode/
->>>>>>> 206bcad (Initial Commit)
+

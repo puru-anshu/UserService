@@ -2,7 +2,6 @@ package com.arutech.mftracker.UserService.service;
 
 import com.arutech.mftracker.UserService.config.JwtTokenProvider;
 import com.arutech.mftracker.UserService.dto.*;
-import com.arutech.mftracker.UserService.exceptions.AuthenticationFailedException;
 import com.arutech.mftracker.UserService.exceptions.InvalidTokenException;
 import com.arutech.mftracker.UserService.exceptions.UserAlreadyExistsException;
 import com.arutech.mftracker.UserService.exceptions.UserNotFoundException;
@@ -13,8 +12,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
